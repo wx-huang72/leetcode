@@ -1,8 +1,3 @@
-# 1534236469   before wrong,   after correct
-# 123          before correct, after wrong
-# -123         before correct, after wrong
-# 120          both correct
-
 class Solution:
     def reverse(self, x: int) -> int:
         if x>=0:
@@ -15,7 +10,7 @@ class Solution:
 
         num = int(''.join(map(str,res))) * a
         
-        # if (num > 2^31 -1 or num < -2^31):
-        #     return 0
+        if num >= 2 ** 31 - 1 or num <= -2 ** 31:   #2的31次方是2**31， 不是2^31
+            return 0
 
         return num 
